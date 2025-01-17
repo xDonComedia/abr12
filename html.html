@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Surpresa!!</title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+body {
+    background: #6c63ff;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    /* Improved text contrast */
+}
+
+.bolo {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff8fab;
+    color:#fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bolo:hove {
+    background-color: #bb697e;
+}
+
+.bolo:active {
+    background-color: #ff4e7a;
+}
+
+.card {
+    background: #fdfdfd;
+    border-radius: 4px;
+    height: 85vh;
+    width: 80vw;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Adjusted box shadow for depth */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    overflow: hidden;
+}
+
+img.birthday {
+    max-height: 30vh;
+}
+
+.text {
+    padding: 1em;
+    color: #333;
+    /* Adjusted text color */
+}
+
+.muted {
+    opacity: 0.8;
+}
+
+.space {
+    height: 100px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body.play-music {
+    animation: fadeIn 2s ease-in-out;
+    /* Adjust the animation duration and timing function as needed */
+}
+    </style>
+    <body>
+        <div class="card">
+            <img src="https://github.com/DzarelDeveloper/Img/blob/main/ulangtahun.jpg?raw=true" alt="birthday"
+                class="birthday">
+            <div class="text">
+                <h1>Oii Débora!!!</h1>
+                <p>Um Feliz Aniversario Especial para você!! Nesse dia especial te desejo
+                    muita paz, saúde e muitos anos de vida!!
+                    <br><br>
+                    Que seu dia seja repleto de felicidade e coisas boas! Que consiga tudo o que deseja e almeja!!
+                    <br><br>
+                    Novamente parabéns e feliz Aniversario :) ! 🎉🎂
+                </p>
+                <p class="muted">- Gabriel Lin -</p>
+                <a href="html2.html">
+                    <button class="bolo">*Clique Aqui*</button>
+                </a>
+            </div>
+            <div class="space"></div>
+            <audio controls autoplay alt="player">
+                <source src="hbd.mp3" type="audio/mp3"> Your browser does not support the audio element.
+            </audio>
+            <script>
+                const audio = document.querySelector('audio');
+                const body = document.body;
+
+                audio.addEventListener('play', () => {
+                    body.classList.add('play-music');
+                });
+
+                audio.addEventListener('pause', () => {
+                    body.classList.remove('play-music');
+                });
+            </script>
+        </div>
+    </body>
+</html> 
